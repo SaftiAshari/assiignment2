@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>BMI Calculator</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<style>
+		body {
+			background-image: url("background-image.jpg");
+			font-family: 'Roboto', sans-serif;
+			color: #fff;
+			margin: 0;
+			padding: 0;
+		}
+		form {
+			background-color: rgba(0, 0, 0, 0.5);
+			border-radius: 10px;
+			margin: 50px auto;
+			padding: 30px;
+			text-align: center;
+			width: 400px;
+		}
+		input {
+			padding: 10px;
+			margin-bottom: 10px;
+			width: 100%;
+			border: none;
+			border-radius: 5px;
+			font-size: 18px;
+		}
+		button {
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 5px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 18px;
+			padding: 10px;
+			width: 100%;
+		}
+		h2 {
+			font-size: 28px;
+			margin-top: 0;
+		}
+		#result {
+			font-size: 24px;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<h2>BMI Calculator</h2>
+		<label for="weightInput">Weight (kg):</label>
+		<input type="number" id="weightInput" placeholder="Enter your weight" required>
+		<label for="heightInput">Height (m):</label>
+		<input type="number" id="heightInput" placeholder="Enter your height" required>
+		<button id="calculateBtn">Calculate BMI</button>
+		<div id="result"></div>
+	</form>
+	<script>
+		document.getElementById("calculateBtn").addEventListener("click", function() {
+			var weight = document.getElementById("weightInput").value;
+			var height = document.getElementById("heightInput").value;
+			var bmi = weight / (height * height);
+			document.getElementById("result").innerHTML = "Your BMI is: " + bmi.toFixed(2);
+		});
+	</script>
+</body>
+</html>
